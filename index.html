@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ARIANA Sitebar</title>
+<link rel="stylesheet" href="styles.css" />
+<script src="gsap.min.js"></script>
+<script>
+  var clickTag = window.location.search.split('clicktag=')[1] || "";
+
+  function animateBlob(id, variations, duration = 5, delay = 0) {
+    const blob = document.getElementById(id);
+
+    gsap.to(blob, {
+      duration: duration,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      delay: delay,
+      attr: { d: variations[1] }
+    });
+
+    gsap.to(blob, {
+      duration: duration,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      delay: duration / 2 + delay,
+      attr: { d: variations[2] }
+    });
+  }
+
+  window.onload = () => {
+    const blobPaths = [
+      document.getElementById("blob").getAttribute("d"),
+      "M0,274.77 C0,254,111,5,224,-10 C550,5,462,100,462,264 C462.53,372.848,483.534,530.474,227.449,470.474 C83.576,430.474,0,473.611,0,274.77 Z",
+      document.getElementById("blob").getAttribute("d")
+    ];
+
+    const blob2Paths = [
+      document.getElementById("blob2").getAttribute("d"),
+      "M63.429,310.56C-100.989,243.142-24.749,102.755,36.092,41.914,107.827-29.821,252.119,1.01,307.205,56.096c58.169,58.169,86.659,131.754-37.409,215.822-77.49,77.49-153.131,71.878-206.367,38.642Z",
+      document.getElementById("blob2").getAttribute("d")
+    ];
+
+    const blob3Paths = [
+      document.getElementById("blob3").getAttribute("d"),
+      "M22.056,44.114C68.944-2.774,166.58-17.213,208.894,25.101c100,90,68,150.242-9.864,200-40.455,40.455-91.632,32.45-150.099-26.017C-4.962,133.745-14.969,81.138,22.056,44.114Z",
+      document.getElementById("blob3").getAttribute("d")
+    ];
+
+    
+
+    animateBlob("blob", blobPaths, 5, 0);
+    animateBlob("blob2", blob2Paths, 5, 0);
+    animateBlob("blob3", blob3Paths, 5, 0.5);
+
+    gsap.to("#blob2", {
+      duration: 5,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      transformOrigin: "center center",
+      scale: 1.1
+    });
+
+    gsap.to("#blob3", {
+      duration: 6,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      transformOrigin: "center center",
+      scale: 1.15
+    });
+  };
+</script>
+</head>
+<body>
+  <div class="banner" onclick="window.open(clickTag,'_blank')">
+
+    <div class="reveal">
+      <div class="mask">
+        <img src="media/ariana.webp" class="ariana" />
+      </div>
+    </div>
+
+    <img src="media/event.webp" class="event" />
+    <img src="media/gala.webp" class="gala" />
+    <img src="media/tagung.webp" class="tagung" />
+    <img src="media/seminar.webp" class="seminar" />
+    <img src="media/hochzeit.webp" class="hochzeit" />
+
+    <img src="media/wandelbar.webp" class="wandelbar" />
+
+    <svg viewBox="0 0 463 441" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+      <path id="blob" fill="#5fb246" d="M0,274.77 C0,149.597,111.053,0,224.014,0 C357.201,0,462.53,162.572,462.53,264.848 C462.53,372.848,383.534,430.474,227.449,430.474 C83.576,430.474,0,373.611,0,274.77 Z"/>
+      <path id="blob2" fill="#008b54" d="M63.429,310.56C-3.989,243.142-24.749,102.755,36.092,41.914,107.827-29.821,252.119,1.01,307.205,56.096c58.169,58.169,46.659,131.754-37.409,215.822-77.49,77.49-153.131,91.878-206.367,38.642Z" transform="translate(72,59)"/>
+      <path id="blob3" fill="#00623d" d="M22.056,44.114C68.944-2.774,166.58-17.213,208.894,25.101c49.89,49.89,28.447,150.242-9.864,188.554-40.455,40.455-91.632,32.45-150.099-26.017C-4.962,133.745-14.969,81.138,22.056,44.114Z" transform="translate(95,104)"/>
+    </svg>
+  </div>
+</body>
+</html>
