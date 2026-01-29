@@ -1,0 +1,161 @@
+ * { 
+    margin:0; 
+    padding:0; 
+    box-sizing:border-box; 
+}
+
+  .banner {
+    cursor: pointer;
+    width: 500px;
+    height: 1000px;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    background-image: url("media/background.webp");
+  }
+
+  svg {
+    position: absolute;
+    top: 145px; left: 260px;
+    width: 42%;
+    height: 42%;
+    animation:svg-anm 1s ease-in-out forwards;
+    animation-delay: 11s;
+  }
+
+  @keyframes svg-anm {
+  0% { transform: translateY(0) translateX(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-295px) translateX(5px) scale(0.28); opacity: 1; }
+  }
+
+/*-------------------------- EVENT ------------------------*/
+
+.event {
+  position: absolute;
+  width: 100%;
+  opacity: 100%;
+  animation: event-anm 2s ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+@keyframes event-anm {
+  0% { transform: translateY(-300px); opacity: 1; }
+  50% { transform: translateY(0); opacity: 1; }
+  70% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+/*-------------------------- GALA ------------------------*/
+
+.gala {
+  position: absolute;
+  width: 100%;
+  opacity: 100%;
+  animation: gala-anm 2s ease-out forwards;
+  animation-delay: 2.5s;
+  opacity: 0;
+}
+
+@keyframes gala-anm {
+  0% { transform: translateY(-300px); opacity: 1; }
+  50% { transform: translateY(0); opacity: 1; }
+  70% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+/*-------------------------- TAGUNG ------------------------*/
+
+.tagung {
+  position: absolute;
+  width: 100%;
+  opacity: 100%;
+  animation: tagung-anm 2s ease-out forwards;
+  animation-delay: 4.5s;
+  opacity: 0;
+}
+
+@keyframes tagung-anm {
+  0% { transform: translateY(-300px); opacity: 1; }
+  50% { transform: translateY(0); opacity: 1; }
+  70% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+/*-------------------------- SEMINAR ------------------------*/
+
+.seminar {
+  position: absolute;
+  width: 100%;
+  opacity: 100%;
+  animation: seminar-anm 2s ease-out forwards;
+  animation-delay: 6.5s;
+  opacity: 0;
+}
+
+@keyframes seminar-anm {
+  0% { transform: translateY(-300px); opacity: 1; }
+  50% { transform: translateY(0); opacity: 1; }
+  70% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+/*-------------------------- HOCHZEIT ------------------------*/
+
+.hochzeit {
+  position: absolute;
+  width: 100%;
+  opacity: 100%;
+  animation: hochzeit-anm 2s ease-out forwards;
+  animation-delay: 8.5s;
+  opacity: 0;
+}
+
+@keyframes hochzeit-anm {
+  0% { transform: translateY(-300px); opacity: 1; }
+  50% { transform: translateY(0); opacity: 1; }
+  70% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+/*-------------------------- ARIANA ------------------------*/
+
+.reveal {
+  position: absolute; 
+  width: 500px;            
+  height: 1000px;         
+  overflow: hidden;        
+}
+
+.ariana {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  clip-path: inset(0 0 0 90%); 
+  animation: reveal-anm 2s ease-out forwards;
+  animation-delay: 12s;
+}
+
+@keyframes reveal-anm {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/*-------------------------- WANDELBAR ------------------------*/
+
+.wandelbar {
+  position: absolute;
+  left: -9px;
+  width: 100%;
+  opacity: 100%;
+  animation: wandelbar-anm 2s ease-in-out forwards;
+  animation-delay: 13s;
+  opacity: 0;
+}
+
+@keyframes wandelbar-anm {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
